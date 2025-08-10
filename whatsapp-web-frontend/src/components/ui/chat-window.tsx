@@ -39,7 +39,7 @@ export const ChatWindow = ({ activeChat } : { activeChat : ChatListItem}) => {
 
     return (
         <div className="flex-1 ml-16 md:ml-auto h-screen flex flex-col">
-            <ChatHeader />
+            <ChatHeader activeChat={activeChat} />
             <div style={{ backgroundImage : `url(${bgImage})`, opacity : '95%'}} className="grow flex flex-col justify-between">
                 <MessageArea  messages={messages} loading={loading}/>
                 <MessageInput input={input} setInput={setInput}  handleSend={handleSend}/>
