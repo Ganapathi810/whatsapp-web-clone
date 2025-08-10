@@ -1,4 +1,5 @@
-// services/chatService.js
+import { BACKEND_URL } from '../../config/envConstants'
+
 interface fetchChatMessagesProps {
     userWaId : string,
     contactWaId : string,
@@ -12,9 +13,9 @@ export const fetchChatMessages = async ({ userWaId, contactWaId, conversation_id
     let url = '';
 
     if (conversation_id) {
-      url = `http://localhost:3000/messages/chat?conversation_id=${conversation_id}&limit=${limit}&skip=${skip}`;
+      url = `${BACKEND_URL}/messages/chat?conversation_id=${conversation_id}&limit=${limit}&skip=${skip}`;
     } else {
-      url = `http://localhost:3000/messages/chat?userWaId=${userWaId}&contactWaId=${contactWaId}&limit=${limit}&skip=${skip}`;
+      url = `${BACKEND_URL}/messages/chat?userWaId=${userWaId}&contactWaId=${contactWaId}&limit=${limit}&skip=${skip}`;
     }
 
     const res = await fetch(url);

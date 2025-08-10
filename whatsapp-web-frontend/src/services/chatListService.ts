@@ -1,8 +1,10 @@
 
 
+import { BACKEND_URL } from '../../config/envConstants'
+
 export const fetchChatList = async (userWaId : string ) => {
   try {
-    const res = await fetch(`http://localhost:3000/chats/list?userWaId=${encodeURIComponent(userWaId)}`);
+    const res = await fetch(`${BACKEND_URL}/chats/list?userWaId=${encodeURIComponent(userWaId)}`);
     const data = await res.json();
 
     if (!res.ok) throw new Error(data.message || 'Failed to fetch chat list');
