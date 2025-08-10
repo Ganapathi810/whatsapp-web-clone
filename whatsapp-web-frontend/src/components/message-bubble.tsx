@@ -35,7 +35,7 @@ export const MessageBubble = ({
                 }`}
             >
                 <span className="text-white text-[15px]">{children}</span>
-                <span className="text-white text-[11px]">{timeString}</span>
+                <span className="text-white text-[11px] self-end">{timeString}</span>
             </div>
 
             {align === "right" && isFirstMessageInConversation && (
